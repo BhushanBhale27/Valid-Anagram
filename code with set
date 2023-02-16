@@ -1,0 +1,17 @@
+var isAnagram = function(s, t) {
+  // If the length of s and t are not the same, they can't be anagrams
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  let set = new Set(s);
+
+  // Loop through the characters in the set and compare their frequency in s and t
+  for (let char of set) {
+    if (s.split(char).length !== t.split(char).length) {
+      return false;
+    }
+  }
+
+  return true;
+};
