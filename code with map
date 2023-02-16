@@ -1,0 +1,35 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+let a = new Map();
+let b = new Map();
+   for(let i=0;i<s.length;i++){
+       if(a.get(s[i])==undefined)
+       a.set(s[i],1)
+       else
+       a.set(s[i],a.get(s[i])+1)
+     
+   }
+   for(let i=0;i<t.length;i++){
+       if(b.get(t[i])==undefined)
+       b.set(t[i],1)
+       else
+       b.set(t[i],b.get(t[i])+1)
+
+   }
+  if(a.size!=b.size){
+    return false
+  }
+for([key , value] of a){
+  if(b.get(key)!=value)
+    return false
+}
+   return true
+     
+
+
+    
+};
